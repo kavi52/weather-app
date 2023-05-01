@@ -13,7 +13,7 @@ import {
   CardContent,
 } from "@material-ui/core";
 
-const API_KEY = "4dbcd7f5b3c6a48980df82eeb9157f14";
+const API_KEY = process.env.REACT_APP_API_KEY;
 const BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
 const FORECAST_BASE_URL = "https://api.openweathermap.org/data/2.5/forecast";
 
@@ -85,7 +85,7 @@ const useStyles = makeStyles((theme) => ({
     margin: 15,
     marginTop: 20,
     minWidth: 150,
-    textAlign: 'center',
+    textAlign: "center",
     backgroundColor: "#00000061",
     [theme.breakpoints.down("xs")]: {
       width: "100%",
@@ -95,12 +95,12 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 20,
     textAlign: "center",
   },
-  weatherImage:{
+  weatherImage: {
     width: 160,
     [theme.breakpoints.down("sm")]: {
       width: 100,
     },
-  }
+  },
 }));
 
 export const WeatherReport = () => {
