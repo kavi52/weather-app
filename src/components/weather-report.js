@@ -134,6 +134,7 @@ export const WeatherReport = () => {
       .get(BASE_URL, {
         params: {
           appid: API_KEY,
+          units: "metric", // optional: set units to Celsius
           ...params,
         },
       })
@@ -151,6 +152,7 @@ export const WeatherReport = () => {
       .get(FORECAST_BASE_URL, {
         params: {
           appid: API_KEY,
+          units: "metric", // optional: set units to Celsius
           ...params,
         },
       })
@@ -167,8 +169,7 @@ export const WeatherReport = () => {
     setSelectedCity(city);
     setLoading(true);
     const params = {
-      q: city,
-      units: "metric", // optional: set units to Celsius
+      q: city
     };
     getWeatherDetails(params);
   };
